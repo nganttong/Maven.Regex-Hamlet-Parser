@@ -38,16 +38,33 @@ public class HamletParser {
         return hamletData;
     }
 
-    public Boolean containsPattern(String file, String pattern){
-        Pattern containsPattern = Pattern.compile(pattern);
-        return containsPattern.matcher(file).find();
+    public static String hamletToLeon(String input) {
+        Pattern pattern = Pattern.compile("Hamlet", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(input);
+        return matcher.replaceAll("Leon");
     }
 
-    public String switchNames(String file, String pattern, String name){
-        Pattern containsPattern = Pattern.compile(pattern);
-        Matcher matchThis = containsPattern.matcher(file);
-        String replacedText = matchThis.replaceAll(name);
-        return replacedText;
+    public static String horatioToTariq(String input) {
+        Pattern pattern = Pattern.compile("Horatio", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(input);
+        return matcher.replaceAll("Tariq");
     }
 
+    public static boolean findHamlet(String input) {
+        Pattern pattern = Pattern.compile("Hamlet", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(input);
+        if (matcher.find()) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean findHoratio(String input) {
+        Pattern pattern = Pattern.compile("Horatio", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(input);
+        if (matcher.find()) {
+            return true;
+        }
+        return false;
+    }
 }

@@ -1,5 +1,8 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.regex.Pattern;
 
 import static org.junit.Assert.*;
 
@@ -15,6 +18,13 @@ public class HamletParserTest {
 
     @Test
     public void testChangeHamletToLeon() {
+        //given
+        String expected = "Leon";
+        //when
+
+        //then
+        Assert.assertEquals(expected, );
+
 
     }
 
