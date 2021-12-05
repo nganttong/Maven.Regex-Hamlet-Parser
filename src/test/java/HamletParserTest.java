@@ -20,23 +20,39 @@ public class HamletParserTest {
     public void testChangeHamletToLeon() {
         //given
         String expected = "Leon";
+        String input = "Hamlet";
         //when
-
+        String actual = HamletParser.hamletToLeon(input);
         //then
-        Assert.assertEquals(expected, );
+        Assert.assertEquals(expected, actual);
 
 
     }
 
     @Test
     public void testChangeHoratioToTariq() {
+        //given
+        String expected = "Tariq";
+        String input = "Horatio";
+        //when
+        String actual = HamletParser.horatioToTariq(input);
+        //then
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void testFindHoratio() {
+        //when
+        Boolean actual = HamletParser.findHoratio(hamletText);
+        //then
+        Assert.assertTrue(actual);
     }
 
     @Test
     public void testFindHamlet() {
+        //when
+        Boolean actual = HamletParser.findHamlet(hamletText);
+        //then
+        Assert.assertTrue(actual);
     }
 }
